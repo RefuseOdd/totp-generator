@@ -29,6 +29,103 @@
         width: 600px;
       }
     }
+<<<<<<< HEAD
+
+    /* Dark mode styles */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #363636;
+      --box-bg: #f5f5f5;
+      --footer-bg: #f5f5f5;
+      --link-color: #3273dc;
+      --title-color: #363636;
+      --label-color: #363636;
+      --progress-bg: #f5f5f5;
+      --progress-value: #3273dc;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --box-bg: #1e1e1e;
+      --footer-bg: #1e1e1e;
+      --link-color: #90caf9;
+      --title-color: #ffffff;
+      --label-color: #e0e0e0;
+      --progress-bg: #2d2d2d;
+      --progress-value: #90caf9;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .title {
+      color: var(--title-color) !important;
+    }
+
+    .label {
+      color: var(--label-color) !important;
+    }
+
+    .box {
+      background-color: var(--box-bg);
+      transition: background-color 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .input {
+      background-color: var(--box-bg);
+      color: var(--text-color);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .input::placeholder {
+      color: var(--text-color);
+      opacity: 0.5;
+    }
+
+    .footer {
+      background-color: var(--footer-bg);
+      transition: background-color 0.3s;
+    }
+
+    .footer a {
+      color: var(--link-color);
+    }
+
+    .progress {
+      background-color: var(--progress-bg) !important;
+    }
+
+    .progress::-webkit-progress-bar {
+      background-color: var(--progress-bg) !important;
+    }
+
+    .progress::-webkit-progress-value {
+      background-color: var(--progress-value) !important;
+    }
+
+    .progress::-moz-progress-bar {
+      background-color: var(--progress-value) !important;
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      background-color: var(--box-bg);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark-mode-toggle:hover {
+      background-color: var(--bg-color);
+    }
+=======
+>>>>>>> 6560fcc2c156e6bcb75cdb9a814fc770d2f27ac9
   </style>
 </head>
 <body>
@@ -38,6 +135,25 @@
   <script defer src="js/assets/clipboard-2.0.6.min.js"></script>
   <script defer src="js/app.js?v=1.2"></script>
 
+<<<<<<< HEAD
+  <button class="button dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode">
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    </span>
+  </button>
+
+=======
+>>>>>>> 6560fcc2c156e6bcb75cdb9a814fc770d2f27ac9
   <section id="app" class="section" v-cloak>
 
     <div class="container">
@@ -92,5 +208,30 @@
     </div>
   </footer>
 
+<<<<<<< HEAD
+  <script>
+    // Dark mode functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved theme preference or use system preference
+    const currentTheme = localStorage.getItem('theme') || 
+                        (prefersDarkScheme.matches ? 'dark' : 'light');
+    
+    if (currentTheme === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
+
+=======
+>>>>>>> 6560fcc2c156e6bcb75cdb9a814fc770d2f27ac9
 </body>
 </html>
